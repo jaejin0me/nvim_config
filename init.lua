@@ -3,6 +3,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.g.mapleader = " "
 
 -- 패키지 매니저 lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,12 +20,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+  }
 }
 local opts = {}
 
 -- lazy.nvim 호출
 require("lazy").setup(plugins, opts)
 
+-- telescope 설정
+local builtin = require("telescope.builtin")
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+-- colorschme 설정
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
