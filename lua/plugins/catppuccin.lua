@@ -1,3 +1,4 @@
+-- 테마 플러그인
 return {
     "catppuccin/nvim",
     name = "catppuccin",

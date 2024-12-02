@@ -1,3 +1,4 @@
+-- 자동완성 플러그인
 return {
     {
         "hrsh7th/cmp-nvim-lsp"

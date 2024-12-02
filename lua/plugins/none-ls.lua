@@ -1,3 +1,4 @@
+-- LSP와 관련있음
 return {
 	"nvimtools/none-ls.nvim",
 	dependencies = {

@@ -1,3 +1,4 @@
+-- 디버깅 툴
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {

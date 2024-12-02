@@ -1,3 +1,4 @@
+-- 퍼져 파운더
 return {
     {
         "nvim-telescope/telescope.nvim",

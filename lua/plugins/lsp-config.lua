@@ -1,20 +1,20 @@
 return {
     {
-        "williamboman/mason.nvim",
+        "williamboman/mason.nvim", -- LS, 린터, 포매터 설치를 쉽게 해줌
         config = function()
             require("mason").setup()
         end,
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "williamboman/mason-lspconfig.nvim", -- mason과 lspconfig의 다리 역할
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "tsserver", "pyright" },
+                ensure_installed = { "lua_ls", "ts_ls", "pyright" },
             })
         end,
     },
     {
-        "neovim/nvim-lspconfig",
+        "neovim/nvim-lspconfig", -- LS에 연결하고 설정
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -22,7 +22,7 @@ return {
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
             })
-            lspconfig.tsserver.setup({
+            lspconfig.ts_ls.setup({
                 capabilities = capabilities,
             })
             lspconfig.pyright.setup({

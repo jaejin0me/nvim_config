@@ -1,3 +1,4 @@
+-- 마크다운 플러그인
 return {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
